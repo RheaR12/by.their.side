@@ -294,3 +294,32 @@ footer a:hover {
   color: #777;
 }
 
+/* ---------- PAGE HERO (SUBPAGES) ---------- */
+
+.page-hero {
+  background: linear-gradient(
+    to right,
+    var(--soft-purple),
+    #ded7e4
+  );
+  padding: 90px 20px;
+  text-align: center;
+  color: var(--purple);
+}
+
+.page-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .page-hero {
+    padding: 70px 20px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.9rem;
+  }
+}
