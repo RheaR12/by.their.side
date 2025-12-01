@@ -24,6 +24,7 @@ header {
 
 nav {
   display: flex;
+  align-items: center;   /* This creates the vertical alignment */
   gap: 25px;
   font-size: 1rem;
 }
