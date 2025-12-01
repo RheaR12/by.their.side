@@ -257,3 +257,40 @@ nav a:hover {
     display: flex;
   }
 }
+footer {
+  background-color: var(--near-white);
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid #d7e1e4;
+  margin-top: 80px;
+}
+
+.footer-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+footer a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: var(--purple);
+}
+
+.footer-safety {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
