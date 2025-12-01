@@ -88,6 +88,19 @@
     <h1><em>by their side</em></h1>
     <p>Building safer communities through connection, care, and culturally-rooted prevention.</p>
   </section>
+<script>
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const closeBtn = document.querySelector('.close-mobile-nav');
+
+  mobileBtn.addEventListener('click', () => {
+    mobileNav.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+  });
+</script>
 
 </body>
 </html>
