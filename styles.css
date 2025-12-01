@@ -1,38 +1,59 @@
 /* ---------- GLOBAL STYLING ---------- */
 
+:root {
+  --navy: #002b3d;
+  --purple: #3e0c70;
+  --maroon: #700c0c;
+  --blue-grey: #8ba6b1;
+  --soft-purple: #a980ac; /* Core brand colour */
+  --blush: #ebc2b9;
+  --off-white: #f8f7f4;
+  --near-white: #fdfcff;
+  --cream: #fef3ea;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f7f4;
-  color: #002b3d;
+  background-color: var(--off-white);
+  color: var(--navy);
 }
 
 img {
   height: 60px;
+  display: block;
 }
 
 /* ---------- HEADER & NAVIGATION ---------- */
 
 header {
-  background-color: #f8f7f4;
+  background-color: var(--off-white);
   padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #d7e1e4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
   display: flex;
-  align-items: center;   /* This creates the vertical alignment */
+  align-items: center;
   gap: 25px;
   font-size: 1rem;
 }
 
 nav a {
   text-decoration: none;
-  color: #002b3d;
+  color: var(--navy);
   font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--purple);
 }
 
 /* ---------- DROPDOWNS ---------- */
@@ -41,20 +62,31 @@ nav a {
   position: relative;
 }
 
+.dropdown > a::after {
+  content: " ▾";
+  font-size: 0.7rem;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f8f7f4;
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: var(--off-white);
+  min-width: 170px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #d7e1e4;
+  top: 32px;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 6px 0;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+  color: var(--purple);
 }
 
 .dropdown:hover .dropdown-content {
@@ -64,42 +96,93 @@ nav a {
 /* ---------- BUTTONS ---------- */
 
 .cta-btn {
-  background-color: #3e0c70;
+  background-color: var(--purple);
   color: white;
   padding: 10px 18px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--soft-purple);
 }
 
 .safe-exit {
-  background-color: #700c0c;
+  background-color: var(--maroon);
   color: white;
   padding: 10px 16px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  margin-left: 20px;
+  margin-left: 15px;
+  transition: 0.25s ease;
+}
+
+.safe-exit:hover {
+  background-color: #9b1f1f;
 }
 
 /* ---------- HERO SECTION ---------- */
 
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background-color: #ded7e4;
-  color: #3e0c70;
+  padding: 140px 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--soft-purple),
+    #ded7e4
+  );
+  color: var(--purple);
 }
 
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.3rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   max-width: 700px;
   margin: auto;
   font-weight: 400;
+  color: var(--navy);
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 900px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  img {
+    height: 50px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  nav {
+    display: none; /* Will replace later with mobile menu if you want */
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    padding: 0 15px;
+  }
 }
